@@ -22,17 +22,16 @@ const IssueListSection = () => {
   useEffect(() => {
     const fetchIssueData = async () => {
       try {
-        const response = await CORE_API(
-          'get',
-          `/repos/${OWNER}/${REPO}/issues`,
-          { per_page: 10, page }
-        )
+        const response = await CORE_API('get', `/repos/${OWNER}/${REPO}/issues`, {
+          page,
+          sort: 'comments',
+        })
         const { data } = response
 
         const sortedIsOpen = sortingIsOpen(data)
         const sortedData = sortingComments(sortedIsOpen)
 
-        setIssueCard((prev) => [...prev, ...sortedData])
+        setIssueCard(prev => [...prev, ...sortedData])
       } catch (error) {
         console.log(error)
       }
@@ -43,9 +42,8 @@ const IssueListSection = () => {
 
   useEffect(() => {
     if (scrollHeight !== 0 && refCurrent) {
-      refCurrent.scrollTop >=
-        refCurrent.scrollHeight - refCurrent.clientHeight &&
-        setPage((prev) => prev + 1)
+      refCurrent.scrollTop >= refCurrent.scrollHeight - refCurrent.clientHeight &&
+        setPage(prev => prev + 1)
     }
   }, [scrollHeight])
 
@@ -54,16 +52,8 @@ const IssueListSection = () => {
       <Box ref={issueListRef}>
         {issueCard.map(
           (
-            {
-              id,
-              number,
-              title,
-              user: { login, avatar_url },
-              created_at,
-              comments,
-              body,
-            },
-            index
+            { id, number, title, user: { login, avatar_url }, created_at, comments, body },
+            index,
           ) => (
             <IssueCard
               key={id}
@@ -76,7 +66,7 @@ const IssueListSection = () => {
               avatar_url={avatar_url}
               body={body}
             />
-          )
+          ),
         )}
       </Box>
     </Section>

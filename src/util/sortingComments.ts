@@ -4,7 +4,7 @@ type SortingCommentsType = {
   (data: IssueDataType[]): IssueDataType[]
 }
 
-export const sortingComments: SortingCommentsType = (data) => {
+export const sortingComments: SortingCommentsType = data => {
   const sortedData: IssueDataType[] = [
     ...data.sort((a, b) => {
       return b.comments - a.comments

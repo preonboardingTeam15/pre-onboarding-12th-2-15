@@ -8,8 +8,7 @@ import { IssueContext } from '../../context/IssueContext'
 const Detail = () => {
   const { state } = useLocation()
   const { issueInfo }: any = useContext(IssueContext)
-  const { number, title, userId, created_at, comments, count, avatar_url } =
-    issueInfo
+  const { number, title, userId, created_at, comments, count, avatar_url } = issueInfo
 
   return (
     <Box>
