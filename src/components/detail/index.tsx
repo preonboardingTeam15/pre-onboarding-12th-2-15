@@ -2,7 +2,7 @@ import { useContext } from 'react'
 
 import { useLocation } from 'react-router-dom'
 import { styled } from 'styled-components'
-import ReactMarkdown from 'react-markdown'
+import MarkdownPreview from '@uiw/react-markdown-preview'
 import 'github-markdown-css/github-markdown.css'
 
 import IssueCard from '../main/IssueCard'
@@ -30,7 +30,11 @@ const Detail = () => {
         />
       </ProfileWrapper>
 
-      <ReactMarkdown className="markdown-body">{state.text}</ReactMarkdown>
+      <MarkdownPreview
+        source={state.text}
+        wrapperElement={{ 'data-color-mode': 'light' }}
+        className="markdown-body"
+      />
     </Box>
   )
 }
