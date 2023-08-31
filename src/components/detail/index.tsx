@@ -1,10 +1,7 @@
 import { useContext } from 'react'
-
 import { useLocation } from 'react-router-dom'
 import { styled } from 'styled-components'
 import MarkdownPreview from '@uiw/react-markdown-preview'
-import 'github-markdown-css/github-markdown.css'
-
 import IssueCard from '../main/IssueCard'
 import { IssueContext } from '../../context/IssueContext'
 
