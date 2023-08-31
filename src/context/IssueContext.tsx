@@ -19,17 +19,13 @@ type IssuesProviderProps = {
   children: React.ReactNode
 }
 
-export const IssueContext = createContext<IssueContextType | undefined>(
-  undefined
-)
+export const IssueContext = createContext<IssueContextType | undefined>(undefined)
 
 const IssueProvider: React.FC<IssuesProviderProps> = ({ children }) => {
   const [issueInfo, setIssueInfo] = useState<IssueInfoType>()
 
   return (
-    <IssueContext.Provider value={{ issueInfo, setIssueInfo }}>
-      {children}
-    </IssueContext.Provider>
+    <IssueContext.Provider value={{ issueInfo, setIssueInfo }}>{children}</IssueContext.Provider>
   )
 }
 

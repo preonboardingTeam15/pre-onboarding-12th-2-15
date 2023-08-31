@@ -9,7 +9,7 @@ const Detail = () => {
   const { state } = useLocation()
   const { issueInfo }: any = useContext(IssueContext)
   const { number, title, userId, created_at, comments, avatar_url } = issueInfo
-  console.log(avatar_url)
+  // console.log(avatar_url)
   return (
     <Box>
       <ProfileWrapper>
