@@ -1,19 +1,15 @@
 import { useContext } from 'react'
-
 import { useLocation } from 'react-router-dom'
 import { styled } from 'styled-components'
-import ReactMarkdown from 'react-markdown'
-import 'github-markdown-css/github-markdown.css'
-
+import MarkdownPreview from '@uiw/react-markdown-preview'
 import IssueCard from '../main/IssueCard'
 import { IssueContext } from '../../context/IssueContext'
 
 const Detail = () => {
   const { state } = useLocation()
   const { issueInfo }: any = useContext(IssueContext)
-  const { number, title, userId, created_at, comments, count, avatar_url } =
-    issueInfo
-
+  const { number, title, userId, created_at, comments, avatar_url } = issueInfo
+  // console.log(avatar_url)
   return (
     <Box>
       <ProfileWrapper>
@@ -26,11 +22,14 @@ const Detail = () => {
           userId={userId}
           created_at={created_at}
           comments={comments}
-          count={count}
         />
       </ProfileWrapper>
 
-      <ReactMarkdown className="markdown-body">{state.text}</ReactMarkdown>
+      <MarkdownPreview
+        source={state.text}
+        wrapperElement={{ 'data-color-mode': 'light' }}
+        className="markdown-body"
+      />
     </Box>
   )
 }

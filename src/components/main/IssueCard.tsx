@@ -1,8 +1,6 @@
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { styled } from 'styled-components'
-
-import AdBanner from './AdBanner'
 import { IssueContext } from '../../context/IssueContext'
 import { dateSlice } from '../../util/dateSlice'
 import { ROUTES } from '../../router/routes'
@@ -13,7 +11,6 @@ interface IssueCardProps {
   userId: string
   created_at: string
   comments: number
-  count: number
   avatar_url?: string
   body?: string
 }
@@ -24,7 +21,6 @@ const IssueCard = ({
   userId,
   created_at,
   comments,
-  count,
   avatar_url,
   body,
 }: IssueCardProps) => {
@@ -41,7 +37,6 @@ const IssueCard = ({
       created_at,
       comments,
       avatar_url,
-      count,
     })
   }
 
@@ -73,7 +68,6 @@ const IssueCard = ({
           </CommentWrapper>
         </Box>
       </MoveBtn>
-      {(count + 1) % 5 === 0 && <AdBanner />}
     </>
   )
 }
