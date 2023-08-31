@@ -92,13 +92,11 @@
 ```shell
 {
   "tabWidth": 2,
-  "semi": true,
-  "quoteProps": "as-needed",
-  "endOfLine": "auto",
-  "arrowParens": "avoid",
+  "useTabs": false,
+  "semi": false,
+  "printWidth": 100,
   "singleQuote": true,
-  "bracketSpacing": true,
-  "printWidth": 100
+  "arrowParens": "avoid"
 }
 ```
 
@@ -141,15 +139,16 @@ npm start
 - Development  
    ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
   ![react-router-dom](https://img.shields.io/badge/react--router--dom-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-  ![TailWindCSS](https://img.shields.io/badge/Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+  ![Styled-Components](https://img.shields.io/badge/styled--components%20CSS-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white)
   ![ESLint](https://img.shields.io/badge/ESLint-blue?style=for-the-badge&logo=eslint)
   ![Prettier](https://img.shields.io/badge/Prettier-ff69b4?style=for-the-badge&logo=prettier)
-
+- Github Library
+  - octokit
 - Communication  
   ![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
   ![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 
-  </br>
+</br>
 
 ## 📂 프로젝트 구조
 
