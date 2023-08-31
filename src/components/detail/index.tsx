@@ -8,8 +8,8 @@ import { IssueContext } from '../../context/IssueContext'
 const Detail = () => {
   const { state } = useLocation()
   const { issueInfo }: any = useContext(IssueContext)
-  const { number, title, userId, created_at, comments, count, avatar_url } = issueInfo
-
+  const { number, title, userId, created_at, comments, avatar_url } = issueInfo
+  // console.log(avatar_url)
   return (
     <Box>
       <ProfileWrapper>
@@ -22,7 +22,6 @@ const Detail = () => {
           userId={userId}
           created_at={created_at}
           comments={comments}
-          count={count}
         />
       </ProfileWrapper>
 

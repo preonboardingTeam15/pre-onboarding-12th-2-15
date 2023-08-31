@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-
 import { styled } from 'styled-components'
-
 import IssueCard from './IssueCard'
+import AdBanner from './AdBanner'
 import { CORE_API } from '../../api/core'
 import { OWNER, REPO } from '../../api/constants'
 import useScroll from './hook/useScroll'
@@ -14,9 +13,7 @@ const IssueListSection = () => {
   const [issueCard, setIssueCard] = useState<IssueDataType[]>([])
   const [page, setPage] = useState(1)
   const issueListRef = useRef<HTMLDivElement>(null)
-
   const scrollHeight = useScroll(issueListRef)
-
   const refCurrent = issueListRef.current
 
   useEffect(() => {
@@ -50,21 +47,19 @@ const IssueListSection = () => {
   return (
     <Section>
       <Box ref={issueListRef}>
-        {issueCard.map(
-          (
-            { id, number, title, user: { login, avatar_url }, created_at, comments, body },
-            index,
-          ) => (
+        {issueCard.map((issueData, index) =>
+          (index + 1) % 5 === 0 ? (
+            <AdBanner key={index} />
+          ) : (
             <IssueCard
-              key={id}
-              number={number}
-              title={title}
-              userId={login}
-              created_at={created_at}
-              comments={comments}
-              count={index}
-              avatar_url={avatar_url}
-              body={body}
+              key={issueData.id}
+              number={issueData.number}
+              title={issueData.title}
+              userId={issueData.user.login}
+              created_at={issueData.created_at}
+              comments={issueData.comments}
+              avatar_url={issueData.user.avatar_url}
+              body={issueData.body}
             />
           ),
         )}
