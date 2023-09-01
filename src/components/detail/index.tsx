@@ -29,11 +29,10 @@ const Detail = () => {
         />
       </ProfileWrapper>
 
-      <MarkdownPreview
-        source={text}
-        wrapperElement={{ 'data-color-mode': 'light' }}
-        className="markdown-body"
-      />
+      <BodyContainer>
+        <MarkdownPreview source={state.text} wrapperElement={{ 'data-color-mode': 'light' }} />
+      </BodyContainer>
+
     </Box>
   )
 }
