@@ -75,12 +75,13 @@ const IssueCard = ({
 const Box = styled.div`
   display: flex;
   height: 5rem;
-  margin-bottom: 1rem;
-  border-bottom: 0.1rem solid #e1e2e3;
+  margin: 1rem 0;
 `
 const MoveBtn = styled.button`
   width: 100%;
   overflow-x: hidden;
+  margin-top: 1rem;
+  border-bottom: 0.1rem solid #e1e2e3;
 `
 const DescWrapper = styled.div`
   width: 80%;
@@ -124,7 +125,7 @@ const CommentWrapper = styled.div`
   margin-right: 10px;
 `
 const CommentNumber = styled.span`
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 `
 
 export default IssueCard

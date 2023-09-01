@@ -31,9 +31,9 @@ const IssueListSection = () => {
               <IssueCard {...issueData} userId={issueData.user.login} />
             </div>,
             isAdBanner && (
-              <div key={`ad-${index}`} ref={isLastElement ? lastIssueRefCallback : null}>
+              <AdContainer key={`ad-${index}`} ref={isLastElement ? lastIssueRefCallback : null}>
                 <AdBanner />
-              </div>
+              </AdContainer>
             ),
           ]
         })}
@@ -48,6 +48,11 @@ const Box = styled.div`
   height: 70rem;
   overflow-y: scroll;
   margin: 0 20px;
+`
+
+const AdContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 export default IssueListSection
