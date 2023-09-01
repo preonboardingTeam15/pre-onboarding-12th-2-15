@@ -1,16 +1,16 @@
-import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+
 import { styled } from 'styled-components'
-import { IssueContext } from '../../context/IssueContext'
+
 import { dateSlice } from '../../util/dateSlice'
 import { ROUTES } from '../../router/routes'
 
 interface IssueCardProps {
-  number: number
+  number: number | string | null
   title: string
-  userId: string
   created_at: string
-  comments: number
+  comments: number | string | null
+  user_id: string
   avatar_url?: string
   body?: string
 }
@@ -18,32 +18,20 @@ interface IssueCardProps {
 const IssueCard = ({
   number,
   title,
-  userId,
   created_at,
   comments,
+  user_id,
   avatar_url,
   body,
 }: IssueCardProps) => {
   const navigate = useNavigate()
+  const { state } = useLocation()
+
   const { year, month, day } = dateSlice(created_at)
 
-  const { setIssueInfo }: any = useContext(IssueContext)
-
-  const saveUserInfo = () => {
-    setIssueInfo({
-      number,
-      title,
-      userId,
-      created_at,
-      comments,
-      avatar_url,
-    })
-  }
-
   const handleMove = () => {
-    saveUserInfo()
-    navigate(ROUTES.DETAIL, {
-      state: { text: body },
+    navigate(`${ROUTES.DETAIL}?number=${number}&comments=${comments}`, {
+      state: { text: body, title, user_id, avatar_url, created_at },
     })
   }
 
@@ -57,7 +45,7 @@ const IssueCard = ({
               <IssueTitle>{title}</IssueTitle>
             </IssueHeader>
             <IssueInfo>
-              <IssueAuthor>작성자: {userId}</IssueAuthor>
+              <IssueAuthor>작성자:{user_id}</IssueAuthor>
               <IssueCreatedAt>
                 작성일: {year}년{month}월{day}일
               </IssueCreatedAt>

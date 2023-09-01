@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { styled } from 'styled-components'
+
 import IssueCard from './IssueCard'
 import AdBanner from './AdBanner'
 import LoadingCard from '../LoadingCard'
@@ -22,13 +23,27 @@ const IssueListSection = () => {
         {issueCard.flatMap((issueData, index) => {
           const isAdBanner = (index + 1) % 4 === 0
           const isLastElement = index === issueCard.length - 1
+          const {
+            number,
+            title,
+            id,
+            created_at,
+            comments,
+            user: { login, avatar_url },
+            body,
+          } = issueData
 
           return [
-            <div
-              key={issueData.id}
-              ref={isLastElement && !isAdBanner ? lastIssueRefCallback : null}
-            >
-              <IssueCard {...issueData} userId={issueData.user.login} />
+            <div key={id} ref={isLastElement && !isAdBanner ? lastIssueRefCallback : null}>
+              <IssueCard
+                number={number}
+                title={title}
+                created_at={created_at}
+                comments={comments}
+                user_id={login}
+                avatar_url={avatar_url}
+                body={body}
+              />
             </div>,
             isAdBanner && (
               <div key={`ad-${index}`} ref={isLastElement ? lastIssueRefCallback : null}>
