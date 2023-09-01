@@ -165,8 +165,7 @@ npm start
  ┃ ┃ ┗ 📜index.tsx
  ┃ ┣ 📂main
  ┃ ┃ ┣ 📂hook
- ┃ ┃ ┃ ┣ 📜useInfiniteScrollIssues.tsx
- ┃ ┃ ┃ ┗ 📜useScroll.tsx
+ ┃ ┃ ┃ ┗ 📜useInfiniteScrollIssues.tsx
  ┃ ┃ ┣ 📜AdBanner.tsx
  ┃ ┃ ┣ 📜IssueCard.tsx
  ┃ ┃ ┣ 📜IssueListSection.tsx
