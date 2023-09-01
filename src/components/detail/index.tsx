@@ -8,7 +8,6 @@ import IssueCard from '../main/IssueCard'
 const Detail = () => {
   const [searchParams] = useSearchParams()
   const location = useLocation()
-
   const { text, title, user_id, avatar_url, created_at } = location.state
 
   const numberValue = searchParams.get('number')

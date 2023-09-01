@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react'
 import { styled } from 'styled-components'
 
-import IssueCard from './IssueCard'
 import AdBanner from './AdBanner'
 import LoadingCard from '../LoadingCard'
 import useInfiniteScrollIssues from './hook/useInfiniteScrollIssues'
 import useFetchInitialData from '../../api/hook/useFetchInitialData'
 import { useLoading } from '../../context/LodingContext'
 import { IssueDataType } from '../../util/type'
+import IssueCardWrapper from './IssueCardWrapper'
 
 const IssueListSection = () => {
   const [issueCard, setIssueCard] = useState<IssueDataType[]>([])
@@ -34,17 +34,20 @@ const IssueListSection = () => {
           } = issueData
 
           return [
-            <div key={id} ref={isLastElement && !isAdBanner ? lastIssueRefCallback : null}>
-              <IssueCard
-                number={number}
-                title={title}
-                created_at={created_at}
-                comments={comments}
-                user_id={login}
-                avatar_url={avatar_url}
-                body={body}
-              />
-            </div>,
+            <IssueCardWrapper
+              key={id}
+              number={number}
+              title={title}
+              id={id}
+              created_at={created_at}
+              comments={comments}
+              user_id={login}
+              avatar_url={avatar_url}
+              body={body}
+              isLastElement={isLastElement}
+              isAdBanner={isAdBanner}
+              lastIssueRefCallback={lastIssueRefCallback}
+            />,
             isAdBanner && (
               <AdContainer key={`ad-${index}`} ref={isLastElement ? lastIssueRefCallback : null}>
                 <AdBanner />
