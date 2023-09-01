@@ -20,16 +20,17 @@ const AdBanner = () => {
 const Box = styled.div`
   display: flex;
   width: 50%;
-  height: 5rem;
-  margin-top: 1rem;
 `
 const ImageBtn = styled.button`
   width: 100%;
   height: inherit;
 `
 const Image = styled.img`
-  width: inherit;
-  height: inherit;
+  /* width: inherit;
+  height: inherit; */
+  display: block;
+	margin: 20px auto 20px;
+	align-content: center;
 `
 
 export default AdBanner
