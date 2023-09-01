@@ -25,18 +25,21 @@ const Detail = () => {
         />
       </ProfileWrapper>
 
-      <MarkdownPreview
-        source={state.text}
-        wrapperElement={{ 'data-color-mode': 'light' }}
-        className="markdown-body"
-      />
+      <BodyContainer>
+        <MarkdownPreview
+          source={state.text}
+          wrapperElement={{ 'data-color-mode': 'light' }}
+          className="markdown-body"
+        />
+      </BodyContainer>
     </Box>
   )
 }
 
 const Box = styled.div`
-  height: 65rem;
-  overflow-y: scroll;
+  height: 70rem;
+  overflow-y: auto;
+  margin: 0 2rem;
 `
 const ProfileWrapper = styled.div`
   display: flex;
@@ -49,6 +52,10 @@ const AvatarWrapper = styled.div`
 const Image = styled.img`
   width: inherit;
   height: inherit;
+`
+
+const BodyContainer = styled.div`
+  margin-top: 2rem;
 `
 
 export default Detail

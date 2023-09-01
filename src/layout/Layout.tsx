@@ -23,18 +23,21 @@ const Box = styled.div`
   background-color: #c0d6e4;
 `
 const Wrapper = styled.div`
-  width: 40rem;
-  height: 70rem;
+  width: 70rem;
+  height: 80rem;
   padding: 1rem;
   border: 0.1rem solid #e1e2e3;
   border-radius: 1rem;
   background-color: #fff;
 `
+
 const Header = styled.header``
+
 const Title = styled.h1`
   text-align: center;
-  margin-bottom: 1rem;
-  font-size: 2.4rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
   font-weight: bold;
 `
 

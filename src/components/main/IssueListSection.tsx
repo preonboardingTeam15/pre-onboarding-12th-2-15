@@ -31,9 +31,9 @@ const IssueListSection = () => {
               <IssueCard {...issueData} userId={issueData.user.login} />
             </div>,
             isAdBanner && (
-              <div key={`ad-${index}`} ref={isLastElement ? lastIssueRefCallback : null}>
+              <AdContainer key={`ad-${index}`} ref={isLastElement ? lastIssueRefCallback : null}>
                 <AdBanner />
-              </div>
+              </AdContainer>
             ),
           ]
         })}
@@ -43,10 +43,21 @@ const IssueListSection = () => {
   )
 }
 
-const Section = styled.section``
-const Box = styled.div`
-  height: 65rem;
+const Section = styled.section`
   overflow-y: scroll;
+
+  // ::-webkit-scrollbar {
+  //   display: none;
+  // }
+`
+const Box = styled.div`
+  height: 70rem;
+  margin: 0 2rem;
+`
+
+const AdContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 export default IssueListSection
