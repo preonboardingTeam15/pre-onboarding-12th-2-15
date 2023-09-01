@@ -136,9 +136,11 @@ npm start
    ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
   ![react-router-dom](https://img.shields.io/badge/react--router--dom-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
   ![Styled-Components](https://img.shields.io/badge/styled--components%20CSS-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=white)
+  [![@uiw/react-markdown-preview](https://img.shields.io/badge/@uiw/react--markdown--preview-00bfff?style=for-the-badge&logo=react&logoColor=white)](https://github.com/uiwjs/react-markdown-preview)
   ![ESLint](https://img.shields.io/badge/ESLint-blue?style=for-the-badge&logo=eslint)
   ![Prettier](https://img.shields.io/badge/Prettier-ff69b4?style=for-the-badge&logo=prettier)
   [![Octokit](https://img.shields.io/badge/Octokit-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/octokit/octokit.js)
+  
 
 - Communication  
   ![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)
