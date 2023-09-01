@@ -126,7 +126,7 @@ npm start
 
 ## 🎥 데모 영상
 
-[배포 링크](https://pre-onboarding-12th-1-15-beta.vercel.app/){:target="_blank"}
+**[배포 링크](https://pre-onboarding-12th-2-15.vercel.app/)**
 
 </br>
 
