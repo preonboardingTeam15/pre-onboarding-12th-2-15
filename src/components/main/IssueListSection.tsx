@@ -43,10 +43,15 @@ const IssueListSection = () => {
   )
 }
 
-const Section = styled.section``
+const Section = styled.section`
+  overflow-y: scroll;
+
+  // ::-webkit-scrollbar {
+  //   display: none;
+  // }
+`
 const Box = styled.div`
   height: 70rem;
-  overflow-y: auto;
   margin: 0 2rem;
 `
 
