@@ -126,7 +126,7 @@ npm start
 
 ## 🎥 데모 영상
 
-**[배포 링크]**
+**[배포 링크](https://pre-onboarding-12th-2-15.vercel.app/)**
 
 </br>
 
@@ -155,20 +155,25 @@ npm start
 ```bash
 📦src
  ┣ 📂api
+ ┃ ┣ 📂hook
+ ┃ ┃ ┣ 📜useFetchInitialData.ts
+ ┃ ┃ ┗ 📜useFetchNextPage.ts
  ┃ ┣ 📜constants.ts
  ┃ ┗ 📜core.ts
  ┣ 📂components
  ┃ ┣ 📂detail
  ┃ ┃ ┗ 📜index.tsx
- ┃ ┗ 📂main
+ ┃ ┣ 📂main
  ┃ ┃ ┣ 📂hook
- ┃ ┃ ┃ ┗ 📜useScroll.tsx
+ ┃ ┃ ┃ ┗ 📜useInfiniteScrollIssues.tsx
  ┃ ┃ ┣ 📜AdBanner.tsx
  ┃ ┃ ┣ 📜IssueCard.tsx
  ┃ ┃ ┣ 📜IssueListSection.tsx
  ┃ ┃ ┗ 📜index.tsx
+ ┃ ┗ 📜LoadingCard.tsx
  ┣ 📂context
- ┃ ┗ 📜IssueContext.tsx
+ ┃ ┣ 📜IssueContext.tsx
+ ┃ ┗ 📜LodingContext.tsx
  ┣ 📂image
  ┃ ┗ 📜AdImage.webp
  ┣ 📂layout
@@ -184,7 +189,7 @@ npm start
  ┃ ┗ 📜type.ts
  ┣ 📜App.tsx
  ┣ 📜index.css
- ┣ 📜index.tsx
+ ┗ 📜index.tsx
 
 ```
 
@@ -254,4 +259,8 @@ npm start
   - createBrowserRouter의 errorElement 사용, 각 라우트 접속 시 loader 함수에서 axios 요청 실패하면 try catch문을 통해 throw new Response('Not Found', { status: 404 }); 로 에러 페이지 이동
 - 데이터 요청 중 로딩 표시
 
-</br>
+  - context api에서 loding을 usestate를 사용하여 상태 관리
+  - 패칭하는 과정의 앞뒤에 loding의 상태를 변경함
+
+  - loding의 상태에 따라 각 페이지 컴포넌츠에서 로딩컴포넌츠를 조건부 랜더링
+    </br>

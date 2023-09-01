@@ -2,13 +2,16 @@ import { useRef, useState } from 'react'
 import { styled } from 'styled-components'
 import IssueCard from './IssueCard'
 import AdBanner from './AdBanner'
+import LoadingCard from '../LoadingCard'
 import useInfiniteScrollIssues from './hook/useInfiniteScrollIssues'
-import { IssueDataType } from '../../util/type'
 import useFetchInitialData from '../../api/hook/useFetchInitialData'
+import { useLoading } from '../../context/LodingContext'
+import { IssueDataType } from '../../util/type'
 
 const IssueListSection = () => {
   const [issueCard, setIssueCard] = useState<IssueDataType[]>([])
   const issueListRef = useRef<HTMLDivElement>(null)
+  const { isIssueListLoading } = useLoading()
 
   useFetchInitialData(setIssueCard)
   const lastIssueRefCallback = useInfiniteScrollIssues(setIssueCard)
@@ -34,6 +37,7 @@ const IssueListSection = () => {
             ),
           ]
         })}
+        {isIssueListLoading && <LoadingCard />}
       </Box>
     </Section>
   )
