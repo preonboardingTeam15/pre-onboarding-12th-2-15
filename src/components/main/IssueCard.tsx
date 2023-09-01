@@ -48,39 +48,36 @@ const IssueCard = ({
   }
 
   return (
-    <>
-      <MoveBtn onClick={handleMove}>
-        <Box>
-          <DescWrapper>
-            <IssueHeader>
-              <IssueNumber>#{number}</IssueNumber>
-              <IssueTitle>{title}</IssueTitle>
-            </IssueHeader>
-            <IssueInfo>
-              <IssueAuthor>작성자: {userId}</IssueAuthor>
-              <IssueCreatedAt>
-                작성일: {year}년{month}월{day}일
-              </IssueCreatedAt>
-            </IssueInfo>
-          </DescWrapper>
-          <CommentWrapper>
-            <CommentNumber>코멘트: {comments}</CommentNumber>
-          </CommentWrapper>
-        </Box>
-      </MoveBtn>
-    </>
+    <MoveBtn onClick={handleMove}>
+      <Box>
+        <DescWrapper>
+          <IssueHeader>
+            <IssueNumber>#{number}</IssueNumber>
+            <IssueTitle>{title}</IssueTitle>
+          </IssueHeader>
+          <IssueInfo>
+            <IssueAuthor>작성자: {userId},</IssueAuthor>
+            <IssueCreatedAt>
+              작성일: {year}년{month}월{day}일
+            </IssueCreatedAt>
+          </IssueInfo>
+        </DescWrapper>
+        <CommentWrapper>
+          <CommentNumber>코멘트: {comments}</CommentNumber>
+        </CommentWrapper>
+      </Box>
+    </MoveBtn>
   )
 }
 
 const Box = styled.div`
   display: flex;
   height: 5rem;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 `
 const MoveBtn = styled.button`
   width: 100%;
   overflow-x: hidden;
-  margin-top: 1rem;
   border-bottom: 0.1rem solid #e1e2e3;
 `
 const DescWrapper = styled.div`
@@ -88,7 +85,7 @@ const DescWrapper = styled.div`
 `
 const IssueHeader = styled.div`
   display: flex;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
   font-size: 1.3rem;
 `
 const IssueNumber = styled.span`

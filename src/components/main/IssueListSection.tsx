@@ -46,8 +46,8 @@ const IssueListSection = () => {
 const Section = styled.section``
 const Box = styled.div`
   height: 70rem;
-  overflow-y: scroll;
-  margin: 0 20px;
+  overflow-y: auto;
+  margin: 0 2rem;
 `
 
 const AdContainer = styled.div`
