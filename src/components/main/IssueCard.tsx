@@ -87,20 +87,30 @@ const DescWrapper = styled.div`
 `
 const IssueHeader = styled.div`
   display: flex;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
   font-size: 1.3rem;
 `
 const IssueNumber = styled.span`
   margin-right: 0.5rem;
+  font-size: 1.7rem;
+  color: gray;
+  font-weight: bold;
 `
 const IssueTitle = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 1.7rem;
+  font-weight: bold;
 `
 const IssueInfo = styled.div`
   text-align: left;
   font-size: 1.3rem;
+  color: gray;
+
+  span {
+    margin-right: 0.5rem;
+  }
 `
 const IssueAuthor = styled.span`
   margin-right: 0.5rem;
@@ -108,9 +118,10 @@ const IssueAuthor = styled.span`
 const IssueCreatedAt = styled.span``
 const CommentWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   width: 20%;
+  margin-right: 10px;
 `
 const CommentNumber = styled.span`
   font-size: 1.3rem;

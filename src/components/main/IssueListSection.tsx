@@ -41,8 +41,9 @@ const IssueListSection = () => {
 
 const Section = styled.section``
 const Box = styled.div`
-  height: 65rem;
+  height: 70rem;
   overflow-y: scroll;
+  margin: 0 20px;
 `
 
 export default IssueListSection

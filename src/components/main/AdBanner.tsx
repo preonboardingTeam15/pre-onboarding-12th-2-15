@@ -21,6 +21,7 @@ const Box = styled.div`
   display: flex;
   height: 5rem;
   margin-bottom: 1rem;
+  margin-right: 10px;
   border-bottom: 0.1rem solid #e1e2e3;
 `
 const ImageBtn = styled.button`
