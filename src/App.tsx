@@ -1,15 +1,13 @@
-import IssueProvider from './context/IssueContext'
+import { RouterProvider } from 'react-router-dom'
 import { LoadingProvider } from './context/LodingContext'
 import { GlobalStyle } from './layout/GlobalStyle'
-import Router from './router/Router'
+import router from './router/Router'
 
 function App() {
   return (
     <LoadingProvider>
-      <IssueProvider>
-        <Router />
-        <GlobalStyle />
-      </IssueProvider>
+      <RouterProvider router={router} />
+      <GlobalStyle />
     </LoadingProvider>
   )
 }

@@ -1,15 +1,19 @@
-import { useContext } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useSearchParams } from 'react-router-dom'
+
 import { styled } from 'styled-components'
 import MarkdownPreview from '@uiw/react-markdown-preview'
+
 import IssueCard from '../main/IssueCard'
-import { IssueContext } from '../../context/IssueContext'
 
 const Detail = () => {
-  const { state } = useLocation()
-  const { issueInfo }: any = useContext(IssueContext)
-  const { number, title, userId, created_at, comments, avatar_url } = issueInfo
-  // console.log(avatar_url)
+  const [searchParams] = useSearchParams()
+  const location = useLocation()
+
+  const { text, title, user_id, avatar_url, created_at } = location.state
+
+  const numberValue = searchParams.get('number')
+  const commentsValue = searchParams.get('comments')
+
   return (
     <Box>
       <ProfileWrapper>
@@ -17,17 +21,18 @@ const Detail = () => {
           <Image src={avatar_url} alt="프로필사진" />
         </AvatarWrapper>
         <IssueCard
-          number={number}
+          number={numberValue}
           title={title}
-          userId={userId}
+          user_id={user_id}
           created_at={created_at}
-          comments={comments}
+          comments={commentsValue}
         />
       </ProfileWrapper>
 
       <BodyContainer>
         <MarkdownPreview source={state.text} wrapperElement={{ 'data-color-mode': 'light' }} />
       </BodyContainer>
+
     </Box>
   )
 }
