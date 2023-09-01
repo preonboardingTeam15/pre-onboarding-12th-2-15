@@ -19,9 +19,9 @@ const AdBanner = () => {
 
 const Box = styled.div`
   display: flex;
+  width: 50%;
   height: 5rem;
-  margin-bottom: 1rem;
-  border-bottom: 0.1rem solid #e1e2e3;
+  margin-top: 1rem;
 `
 const ImageBtn = styled.button`
   width: 100%;

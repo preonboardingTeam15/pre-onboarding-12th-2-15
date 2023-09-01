@@ -1,7 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-
 import { styled } from 'styled-components'
-
 import { dateSlice } from '../../util/dateSlice'
 import { ROUTES } from '../../router/routes'
 
@@ -45,7 +43,7 @@ const IssueCard = ({
               <IssueTitle>{title}</IssueTitle>
             </IssueHeader>
             <IssueInfo>
-              <IssueAuthor>작성자:{user_id}</IssueAuthor>
+              <IssueAuthor>작성자: {user_id}</IssueAuthor>
               <IssueCreatedAt>
                 작성일: {year}년{month}월{day}일
               </IssueCreatedAt>
